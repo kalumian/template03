@@ -1,0 +1,138 @@
+/* Start Gallery */
+.features {
+  padding-top: $space-section;
+  padding-bottom: $space-section;
+  position: relative;
+  background-color: #fff;
+  & .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+  }
+  & .box {
+    text-align: center;
+    border: #ccc 1px solid;
+    &:hover {
+      & .img-holder::after {
+        border-width: 500px 500px 150px 0px;
+        @media (max-width: $small) {
+          border-width: 500px 700px 150px 0px;
+        }
+      }
+      & a {
+        background-position: left bottom;
+        color: #fff;
+      }
+    }
+    & .img-holder {
+      position: relative;
+      overflow: hidden;
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+      }
+      &::before {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+      &::after {
+        right: 0;
+        bottom: 0;
+        border-style: solid;
+        border-width: 0px 0px 150px 500px;
+        border-color: transparent transparent white transparent;
+        transition: $trans1;
+      }
+    }
+    & img {
+      max-width: 100%;
+    }
+    & h2 {
+      font-size: 40px;
+      width: fit-content;
+      margin: auto;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% - 30px);
+        bottom: -10px;
+        height: 5px;
+        left: 15px;
+      }
+    }
+    & p {
+      line-height: 2;
+      font-size: 20px;
+      margin: 30px 0;
+      padding: 25px;
+      color: #777;
+    }
+    & a {
+      display: block;
+      border: 3px solid;
+      width: fit-content;
+      margin: 0 auto 30px;
+      font-size: 22px;
+      padding: 10px 30px;
+    }
+  }
+  & .red {
+    & .img-holder::before {
+      background-color: rgba(220, 20, 60, 0.555);
+    }
+    & .img-holder h2::after {
+      background-color: rgb(220, 20, 60);
+    }
+    & a {
+      color: crimson;
+      transition: $trans1;
+      border-color: crimson;
+      background: linear-gradient(to right, crimson, #fff);
+      background-size: 200% 100%;
+      border-radius: 6px;
+      font-weight: bold;
+      background-position: right bottom;
+    }
+  }
+  & .blue {
+    & .img-holder::before {
+      background-color: rgba(20, 163, 220, 0.555);
+    }
+    & .img-holder h2::after {
+      background-color: rgb(20, 163, 220);
+    }
+    & a {
+      color: rgb(20, 163, 220);
+      transition: $trans1;
+      border-color: rgb(20, 163, 220);
+      background: linear-gradient(to right, rgb(20, 163, 220), #fff);
+      background-size: 200% 100%;
+      border-radius: 6px;
+      font-weight: bold;
+      background-position: right bottom;
+    }
+  }
+  & .green {
+    & .img-holder::before {
+      background-color: rgba(21, 200, 60, 0.555);
+    }
+    & .img-holder h2::after {
+      background-color: rgb(21, 200, 60);
+    }
+    & a {
+      color: rgb(21, 200, 60);
+      transition: $trans1;
+      border-color: rgb(21, 200, 60);
+      background: linear-gradient(to right, rgb(21, 200, 60), #fff);
+      background-size: 200% 100%;
+      border-radius: 6px;
+      font-weight: bold;
+      background-position: right bottom;
+    }
+  }
+}
+/* End Gallery */
